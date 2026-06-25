@@ -6,7 +6,7 @@
         @csrf
 
         <div class="flex items-center justify-center mt-4">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-12 h-12">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-12 h-12 mb-4">
             <b class="text-xl font-semibold mb-4">SINTA User Login</b>
         </div>
 
@@ -45,17 +45,25 @@
             </x-primary-button>
         </div>
 
-        <div class="flex justify-center mt-4">
-            <span class="text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">Don't have an account?</span> 
-            <a class="text-sm text-blue-600 hover:text-blue-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
-                {{ __('Register') }}
+        <div class="flex justify-center items-center gap-1 mt-4">
+            <span class="text-sm">
+                Don't have an account?
+            </span>
+
+            <a class="text-sm text-blue-600 hover:text-blue-900"
+               href="{{ route('register') }}">
+                Register
             </a>
         </div>
 
-        <div class="flex justify-center mt-4">
-            <span class="text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">Back To</span> 
-            <a class="text-sm text-blue-600 hover:text-blue-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('home') }}">
-                home
+        <div class="flex justify-center items-center gap-1 mt-4">
+            <span class="text-sm">
+                Back To
+            </span>
+
+            <a class="text-sm text-blue-600 hover:text-blue-900"
+               href="{{ route('home') }}">
+                Home
             </a>
         </div>
     </form>

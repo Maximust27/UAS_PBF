@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-5 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        <b class="text-sm text-blue-500">{{ __('Sinta') }}</b>
+                        <b class="text-sm text-blue-500">Sinta</b>
                         <p class="text-sm text-blue-500">Executive</p>
                     </x-nav-link>
                 </div>
@@ -23,14 +23,31 @@
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
-
-                            <div class="ms-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <button class="inline-flex items-center px-3 py-2 border border-transparent rounded-md bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+    
+                            <div class="text-left">
+                                <div class="text-sm font-semibold text-gray-800">
+                                    {{ Auth::user()->name }}
+                                </div>
+    
+                                <div class="text-xs text-gray-500">
+                                    Scopus ID:
+                                    <span class="font-medium text-blue-600">
+                                        {{ Auth::user()->scopus_id ?? '-' }}
+                                    </span>
+                                </div>
+                            </div>
+    
+                            <div class="ms-3">
+                                <svg class="fill-current h-4 w-4 text-gray-500"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                          clip-rule="evenodd" />
                                 </svg>
                             </div>
+    
                         </button>
                     </x-slot>
                         
